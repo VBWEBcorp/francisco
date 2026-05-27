@@ -266,7 +266,7 @@ export function ContactContent() {
               {/* Carte Google Maps — Le Mans */}
               <div className="relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-12px_oklch(0.2_0.02_264/0.18)]">
                 <iframe
-                  title="Le Mans — zone d'intervention de Francisco Pautrot, psychopraticien"
+                  title="Le Mans, zone d'intervention de Francisco Pautrot, psychopraticien"
                   src="https://www.google.com/maps?q=Le+Mans,+Sarthe,+France&hl=fr&z=12&output=embed"
                   className="h-56 w-full border-0"
                   loading="lazy"

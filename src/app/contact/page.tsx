@@ -7,7 +7,7 @@ const description =
   "Prenez rendez-vous avec Francisco Pautrot, psychopraticien au Mans (Sarthe). Consultations au cabinet ou en téléconsultation. Téléphone : 06 19 60 18 31."
 
 export const metadata: Metadata = {
-  title: 'Contact & rendez-vous — Psychopraticien au Mans',
+  title: 'Contact & rendez-vous · Psychopraticien au Mans',
   description,
   alternates: { canonical: '/contact' },
 }

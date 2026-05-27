@@ -24,7 +24,7 @@ const description =
   "Francisco Pautrot, psychopraticien au Mans (Sarthe). Accompagnement thérapeutique personnalisé : thérapie cognitive et comportementale, soutien psychologique, gestion du stress et de l'anxiété. Consultations au cabinet et en téléconsultation."
 
 export const metadata: Metadata = {
-  title: 'Psychopraticien au Mans (Sarthe) — Accompagnement thérapeutique',
+  title: 'Psychopraticien au Mans (Sarthe) · Accompagnement thérapeutique',
   description,
   keywords: [...siteConfig.keywords],
   alternates: { canonical: '/' },
@@ -53,11 +53,11 @@ export default function HomePage() {
       <ServicesPreview />
       <StorySection />
       <StatsBand />
-      <FaqSection />
       <TestimonialsSection />
       <GalleryCarousel />
       <CtaSection />
       <ValuesMarquee />
+      <FaqSection />
     </>
   )
 }

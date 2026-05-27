@@ -12,7 +12,7 @@ const description =
   "Consultation individuelle, soutien psychologique, thérapie comportementale, accompagnement personnel, téléconsultation et suivi thérapeutique au Mans (Sarthe). Un accompagnement personnalisé pour votre bien-être."
 
 export const metadata: Metadata = {
-  title: 'Services thérapeutiques — Psychopraticien au Mans',
+  title: 'Services thérapeutiques · Psychopraticien au Mans',
   description,
   alternates: { canonical: '/services' },
 }

@@ -138,7 +138,7 @@ export function Footer() {
       <div className="bg-red-600 text-white">
         <div className="mx-auto max-w-6xl px-4 py-4 text-center sm:px-6 lg:px-8">
           <p className="text-sm font-bold uppercase tracking-wide">
-            Maquette de démonstration — Propriété exclusive de{' '}
+            Maquette de démonstration · Propriété exclusive de{' '}
             <a
               href="https://ouibo.fr"
               className="underline underline-offset-2 transition-opacity hover:opacity-80"

@@ -41,17 +41,24 @@ const img = {
     'https://images.unsplash.com/photo-1527525443983-6e60c75fff46?auto=format&fit=crop&w=1200&q=80', // mains réunies (soutien)
   yoga:
     'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80', // bien-être / yoga
+  // Photos réelles de séances de thérapie (patient + thérapeute)
+  therapieChoisir: '/therapie-choisir.webp',
+  therapieSeance: '/therapie-seance.webp',
+  therapieEchange: '/therapie-echange.jpg',
+  therapieDuo: '/therapie-duo.jpg',
+  therapieCorporelle: '/therapie-corporelle.avif',
+  therapieGestalt: '/therapie-gestalt.jpg',
 }
 
 export const images = {
   // Hero homepage — carousel
-  heroCarousel: [img.contemplation, img.bridge, img.openArms],
+  heroCarousel: [img.therapieDuo, img.contemplation, img.bridge, img.openArms],
 
   // Section "Qui suis-je" sur la home
-  story: img.bowl,
+  story: img.therapieEchange,
 
-  // Page Qui suis-je — image principale
-  aboutHero: img.pathLight,
+  // Page Qui suis-je — portrait de Francisco
+  aboutHero: '/francisco-portrait.jpg',
 
   // Page Services — image de fond du hero
   servicesHero: img.leaves,
@@ -63,16 +70,16 @@ export const images = {
   contactHero: img.meditation,
 
   // Page Qui suis-je — galerie
-  aboutGallery: [img.bowl, img.mindfulness, img.meditation, img.handsTree],
+  aboutGallery: [img.therapieDuo, img.therapieSeance, img.therapieCorporelle, img.therapieGestalt],
 
   // Page Services — images des prestations
   services: [
-    img.hands, // Consultation individuelle
-    img.bowl, // Soutien psychologique
-    img.brain, // Thérapie comportementale
-    img.pathLight, // Accompagnement personnel
+    img.therapieEchange, // Consultation individuelle
+    img.therapieDuo, // Soutien psychologique
+    img.therapieGestalt, // Thérapie comportementale
+    img.therapieChoisir, // Accompagnement personnel
     img.meditation, // Téléconsultation
-    img.mindfulness, // Suivi thérapeutique
+    img.therapieSeance, // Suivi thérapeutique
   ],
 
   // Section CTA — colonnes animées
@@ -83,12 +90,12 @@ export const images = {
 
   // GalleryCarousel sur la home
   homeGallery: [
-    img.contemplation,
-    img.bridge,
+    img.therapieEchange,
+    img.therapieDuo,
     img.bowl,
-    img.mindfulness,
+    img.therapieCorporelle,
     img.meditation,
-    img.handsTree,
+    img.therapieSeance,
   ],
 }
 
@@ -98,9 +105,10 @@ export const images = {
 
 export const heroContent = {
   eyebrow: 'Psychopraticien au Mans',
-  title: 'Retrouvez Votre Équilibre Intérieur',
+  roles: ['Psychopraticien & coach mental', 'Thérapeute', 'Psychothérapie'],
+  title: 'Retrouvez votre équilibre intérieur',
   description:
-    "Un accompagnement thérapeutique personnalisé pour vous aider à surmonter vos difficultés et retrouver votre équilibre de vie — au cabinet au Mans ou en téléconsultation.",
+    "Un accompagnement thérapeutique personnalisé pour vous aider à surmonter vos difficultés et retrouver votre équilibre de vie, au cabinet au Mans ou en téléconsultation.",
   button1: 'Prendre rendez-vous',
   button2: 'Découvrir mes services',
   badges: ['Écoute bienveillante', 'Confidentialité absolue', 'Approche personnalisée'],

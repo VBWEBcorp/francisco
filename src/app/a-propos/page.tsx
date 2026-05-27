@@ -7,7 +7,7 @@ const description =
   "Francisco Pautrot, psychopraticien au Mans depuis plus de 5 ans. Découvrez mon parcours, mon approche intégrative et mes valeurs : bienveillance, confidentialité et accompagnement personnalisé."
 
 export const metadata: Metadata = {
-  title: 'Qui suis-je ? — Francisco Pautrot, psychopraticien au Mans',
+  title: 'Qui suis-je ? · Francisco Pautrot, psychopraticien au Mans',
   description,
   alternates: { canonical: '/a-propos' },
 }

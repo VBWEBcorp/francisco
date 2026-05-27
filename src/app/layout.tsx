@@ -40,7 +40,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Psychopraticien au Mans`,
+    default: `${siteConfig.name} · Psychopraticien au Mans`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,

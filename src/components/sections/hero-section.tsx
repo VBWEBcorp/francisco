@@ -79,6 +79,18 @@ export function HeroSection() {
             {hero.eyebrow}
           </p>
 
+          {/* Rôles / casquettes du praticien */}
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
+            {(hero.roles ?? defaults.roles).map((role: string) => (
+              <span
+                key={role}
+                className="rounded-full border border-white/25 bg-white/10 px-3.5 py-1.5 text-xs font-medium text-white backdrop-blur-sm sm:text-sm"
+              >
+                {role}
+              </span>
+            ))}
+          </div>
+
           {/* Titre avec mot accentué en serif italic + violet uni */}
           <h1 className="mt-6 font-display text-balance pb-1 text-4xl leading-[1.15] font-semibold tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
             {lead ? (

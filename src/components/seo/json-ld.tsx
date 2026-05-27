@@ -21,7 +21,7 @@ export function localBusinessJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': ['ProfessionalService', 'HealthAndBeautyBusiness'],
-    name: `${siteConfig.name} — Psychopraticien`,
+    name: `${siteConfig.name} · Psychopraticien`,
     description: siteConfig.description,
     url: siteConfig.url,
     telephone: siteConfig.phone,

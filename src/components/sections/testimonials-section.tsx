@@ -59,17 +59,24 @@ function MarqueeRow({
 }) {
   const animationClass = direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'
 
+  // On répète les cartes pour qu'une rangée couvre toute la largeur de l'écran,
+  // sinon avec peu de témoignages le défilement laisse un vide disgracieux.
+  const MIN_CARDS = 8
+  const filled = items.length
+    ? Array.from({ length: Math.ceil(MIN_CARDS / items.length) }).flatMap(() => items)
+    : items
+
   return (
     <div className="group relative flex gap-6 overflow-hidden">
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[oklch(0.975_0.012_285)] to-transparent dark:from-[oklch(0.16_0.02_285)] sm:w-24" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[oklch(0.975_0.012_285)] to-transparent dark:from-[oklch(0.16_0.02_285)] sm:w-24" />
       <div className={`flex shrink-0 gap-6 py-2 ${animationClass} group-hover:[animation-play-state:paused]`}>
-        {items.map((t, i) => (
+        {filled.map((t, i) => (
           <TestimonialCard key={`${t.name}-${i}`} testimonial={t} />
         ))}
       </div>
       <div aria-hidden className={`flex shrink-0 gap-6 py-2 ${animationClass} group-hover:[animation-play-state:paused]`}>
-        {items.map((t, i) => (
+        {filled.map((t, i) => (
           <TestimonialCard key={`${t.name}-dup-${i}`} testimonial={t} />
         ))}
       </div>

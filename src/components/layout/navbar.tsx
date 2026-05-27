@@ -16,11 +16,9 @@ interface NavLink {
 }
 
 const defaultLinks: NavLink[] = [
-  { to: '/', label: 'Accueil' },
   { to: '/services', label: 'Services' },
   { to: '/mon-approche', label: 'Mon Approche' },
   { to: '/a-propos', label: 'Qui suis-je ?' },
-  { to: '/contact', label: 'Contact' },
 ]
 
 export function Navbar() {

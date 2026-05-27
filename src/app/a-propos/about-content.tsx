@@ -138,11 +138,11 @@ function AboutHero({ hero }: { hero: typeof defaults.hero }) {
               <div className="relative aspect-[4/5] overflow-hidden rounded-xl lg:aspect-[3/4]">
                 <Image
                   src={hero.image}
-                  alt=""
+                  alt="Francisco Pautrot, psychopraticien au Mans"
                   fill
                   sizes="(min-width: 1024px) 500px, 100vw"
                   priority
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
                 <div
                   className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-primary/15 via-transparent to-transparent"

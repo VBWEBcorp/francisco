@@ -12,7 +12,7 @@ const description =
   "L'approche thérapeutique de Francisco Pautrot, psychopraticien au Mans : thérapie cognitive et comportementale (TCC), thérapie humaniste et thérapie systémique. Une méthode intégrative, à l'écoute de vos besoins."
 
 export const metadata: Metadata = {
-  title: 'Mon approche thérapeutique — TCC, humaniste & systémique',
+  title: 'Mon approche thérapeutique · TCC, humaniste & systémique',
   description,
   alternates: { canonical: '/mon-approche' },
 }
