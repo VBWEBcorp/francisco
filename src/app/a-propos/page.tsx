@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 
 import { AboutContent } from './about-content'
-import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
+import { breadcrumbJsonLd, personJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 
 const description =
-  'Découvrez notre histoire, nos valeurs et notre équipe. Nous accompagnons les entreprises dans leur développement digital.'
+  "Francisco Pautrot, psychopraticien au Mans depuis plus de 5 ans. Découvrez mon parcours, mon approche intégrative et mes valeurs : bienveillance, confidentialité et accompagnement personnalisé."
 
 export const metadata: Metadata = {
-  title: 'À propos',
+  title: 'Qui suis-je ? — Francisco Pautrot, psychopraticien au Mans',
   description,
   alternates: { canonical: '/a-propos' },
 }
@@ -15,10 +15,11 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    webPageJsonLd('À propos', description, '/a-propos'),
+    webPageJsonLd('Qui suis-je ?', description, '/a-propos'),
+    personJsonLd(),
     breadcrumbJsonLd([
       { name: 'Accueil', path: '/' },
-      { name: 'À propos', path: '/a-propos' },
+      { name: 'Qui suis-je ?', path: '/a-propos' },
     ]),
   ],
 }

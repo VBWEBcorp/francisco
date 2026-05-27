@@ -6,6 +6,7 @@ import { useRef } from 'react'
 
 import { CtaSection } from '@/components/sections/cta-section'
 import { PremiumHero } from '@/components/sections/premium-hero'
+import { SectionTitle } from '@/components/ui/section-title'
 import { useContent } from '@/hooks/use-content'
 import { getIcon } from '@/lib/icons'
 import { images as siteImages, servicesContent } from '@/lib/site-content'
@@ -214,6 +215,82 @@ export function ServicesContent() {
             {services.map((s: any, i: number) => (
               <ServiceRow key={s.title || i} service={s} index={i} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Déroulement de l'accompagnement */}
+      <section className="border-b border-border/60 bg-[oklch(0.975_0.012_285)] dark:bg-[oklch(0.16_0.02_285)]">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+          <SectionTitle
+            eyebrow={servicesContent.process.eyebrow}
+            title={servicesContent.process.title}
+            description={servicesContent.process.description}
+          />
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {servicesContent.process.steps.map((step, i) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease }}
+                className="relative rounded-2xl border border-border/60 bg-card/70 p-6 backdrop-blur-sm"
+              >
+                <span className="flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 font-display text-base font-bold text-primary ring-1 ring-primary/20">
+                  {i + 1}
+                </span>
+                <h3 className="mt-5 font-display text-lg leading-tight tracking-tight text-foreground">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {step.desc}
+                </p>
+                {i < servicesContent.process.steps.length - 1 && (
+                  <span
+                    className="pointer-events-none absolute right-5 top-9 hidden text-primary/30 lg:block"
+                    aria-hidden
+                  >
+                    →
+                  </span>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mes engagements */}
+      <section className="border-b border-border/60 bg-background">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+          <SectionTitle
+            eyebrow={servicesContent.engagements.eyebrow}
+            title={servicesContent.engagements.title}
+          />
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {servicesContent.engagements.items.map((item, i) => {
+              const Icon = getIcon(item.iconName)
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease }}
+                  className="rounded-2xl border border-border/60 bg-card/70 p-6 text-center backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1"
+                >
+                  <span className="mx-auto flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-primary/20">
+                    <Icon className="size-5" aria-hidden />
+                  </span>
+                  <h3 className="mt-5 font-display text-base leading-tight tracking-tight text-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>

@@ -3,7 +3,36 @@
     "allow": [
       "Bash(git pull *)",
       "Bash(git fetch *)",
-      "Bash(findstr \":300\")"
+      "Bash(findstr \":300\")",
+      "Bash(grep -qi \"ready\\\\|started server\\\\|localhost:\" \"C:\\\\Users\\\\conta\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-conta-OneDrive-Desktop-Cursor-Francisco\\\\4835690f-7897-4093-a404-6f9b05d8da5a\\\\tasks\\\\buudai051.output\")",
+      "Bash(break)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} - %{time_total}s\\\\n\" http://localhost:3006/)",
+      "Bash(start http://localhost:3006)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' 'https://images.unsplash.com/__TRACKED_VAR__?auto=format&fit=crop&w=400&q=60')",
+      "Bash(cd \"c:\\\\Users\\\\conta\\\\OneDrive\\\\Desktop\\\\Cursor\\\\Francisco\")",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:3006__TRACKED_VAR__)",
+      "Bash(echo 'HTTP __TRACKED_VAR__  __TRACKED_VAR__')",
+      "Bash(curl -s -m 30 -o /dev/null -w '%{http_code}' http://localhost:3006__TRACKED_VAR__)",
+      "Bash(powershell -NoProfile -Command \"\\(Get-CimInstance Win32_Process -Filter 'ProcessId=25796'\\).CommandLine\")",
+      "Bash(curl -s -m 20 -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:3000/\")",
+      "Bash(PORT=3009 npm run dev)",
+      "Bash(curl -s -m 30 \"http://localhost:3009/\")",
+      "Bash(curl -s -m 30 \"http://localhost:3009/mon-approche\")",
+      "Bash(curl -s -m 30 \"http://localhost:3009/services\")",
+      "Bash(curl -s -m 30 \"http://localhost:3009/contact\")",
+      "Bash(curl -s -m 30 -o /dev/null -w \"%{http_code}\" \"http://localhost:3009/\")",
+      "Bash(rm -rf .imgcheck)",
+      "Bash(start http://localhost:3009)",
+      "Bash(cmd.exe /c start http://localhost:3001)",
+      "PowerShell(Stop-Process -Id 22268 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(\"done\")",
+      "Bash(cmd.exe /c start http://localhost:3000)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3000\" -TimeoutSec 90 -UseBasicParsing; \"STATUS: $\\($r.StatusCode\\)  LENGTH: $\\($r.Content.Length\\)\" } catch { \"ERROR: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Process node -ErrorAction SilentlyContinue)",
+      "PowerShell(\"---\")",
+      "PowerShell(Get-CimInstance Win32_Process -Filter \"Name='node.exe'\" | Select-Object ProcessId, @{N='MemMB';E={[math]::Round\\($_.WorkingSetSize/1MB\\)}}, CommandLine | Format-Table -Wrap -AutoSize)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3000\" -TimeoutSec 120 -UseBasicParsing; \"PAGE OK -> STATUS $\\($r.StatusCode\\), $\\($r.Content.Length\\) octets\" } catch { \"ERREUR: $\\($_.Exception.Message\\)\" })"
     ]
   }
 }

@@ -6,23 +6,13 @@ import {
   serviceJsonLd,
   webPageJsonLd,
 } from '@/components/seo/json-ld'
+import { servicesContent } from '@/lib/site-content'
 
 const description =
-  'Création de site, SEO, identité visuelle, développement sur mesure : découvrez nos services pour développer votre activité en ligne.'
-
-const services = [
-  { title: 'Création de site vitrine', desc: 'Un site moderne, rapide et responsive qui présente clairement votre activité et inspire confiance à vos visiteurs.' },
-  { title: 'Application web', desc: 'Outils métier, plateformes de réservation, espaces clients : des applications pensées pour simplifier votre quotidien.' },
-  { title: 'Référencement naturel (SEO)', desc: 'Optimisation technique, contenu stratégique et suivi de positionnement pour gagner en visibilité sur Google.' },
-  { title: 'Identité visuelle', desc: 'Logo, charte graphique, supports de communication : une image cohérente qui vous ressemble.' },
-  { title: 'Communication digitale', desc: 'Stratégie de contenu, réseaux sociaux et campagnes pour développer votre audience en ligne.' },
-  { title: 'Développement sur mesure', desc: 'Intégrations, automatisations, API : des solutions techniques taillées pour vos besoins spécifiques.' },
-  { title: 'Maintenance & sécurité', desc: 'Mises à jour, sauvegardes, monitoring et corrections pour un site toujours performant et sécurisé.' },
-  { title: 'Analyse & reporting', desc: 'Tableaux de bord clairs pour suivre vos performances, comprendre vos visiteurs et ajuster votre stratégie.' },
-]
+  "Consultation individuelle, soutien psychologique, thérapie comportementale, accompagnement personnel, téléconsultation et suivi thérapeutique au Mans (Sarthe). Un accompagnement personnalisé pour votre bien-être."
 
 export const metadata: Metadata = {
-  title: 'Services',
+  title: 'Services thérapeutiques — Psychopraticien au Mans',
   description,
   alternates: { canonical: '/services' },
 }
@@ -30,12 +20,14 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    webPageJsonLd('Services', description, '/services'),
+    webPageJsonLd('Services thérapeutiques', description, '/services'),
     breadcrumbJsonLd([
       { name: 'Accueil', path: '/' },
       { name: 'Services', path: '/services' },
     ]),
-    ...services.map((s) => serviceJsonLd(s.title, s.desc, '/services')),
+    ...servicesContent.list.map((s) =>
+      serviceJsonLd(s.title, s.description, '/services')
+    ),
   ],
 }
 

@@ -48,7 +48,7 @@ function AboutHero({ hero }: { hero: typeof defaults.hero }) {
             <li className="flex items-center gap-1.5">
               <ChevronRight className="size-3 text-muted-foreground/50" aria-hidden />
               <span aria-current="page" className="font-medium text-foreground">
-                À propos
+                Qui suis-je ?
               </span>
             </li>
           </ol>
@@ -172,8 +172,8 @@ function AboutHero({ hero }: { hero: typeof defaults.hero }) {
                   ))}
                 </div>
                 <div className="text-xs">
-                  <div className="font-semibold text-foreground">Une équipe à votre écoute</div>
-                  <div className="text-muted-foreground">Réponse sous 24h</div>
+                  <div className="font-semibold text-foreground">À votre écoute</div>
+                  <div className="text-muted-foreground">Réponse rapide</div>
                 </div>
               </div>
             </motion.div>
@@ -294,16 +294,69 @@ export function AboutContent() {
     <>
       <AboutHero hero={hero} />
 
+      {/* Mon parcours — paragraphes d'introduction */}
+      <section className="border-b border-border/60 bg-background">
+        <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+          <p className="font-display text-xs font-semibold tracking-[0.22em] uppercase text-primary">
+            Mon parcours
+          </p>
+          <h2 className="mt-5 font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl">
+            Mon parcours et ma passion
+          </h2>
+          <div className="mt-7 space-y-5 text-[15px] leading-relaxed text-muted-foreground sm:text-base">
+            {defaults.intro.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mon expertise */}
+      <section className="border-b border-border/60 bg-[oklch(0.975_0.012_285)] dark:bg-[oklch(0.16_0.02_285)]">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+          <SectionTitle
+            eyebrow="Mon expertise"
+            title="Une formation solide à votre service"
+            description="Une expérience dédiée à votre bien-être."
+          />
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {defaults.expertise.map((item, i) => {
+              const Icon = getIcon(item.iconName)
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease }}
+                  className="rounded-2xl border border-border/60 bg-card/70 p-6 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1"
+                >
+                  <span className="flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-primary/20">
+                    <Icon className="size-5" aria-hidden />
+                  </span>
+                  <h3 className="mt-5 font-display text-base leading-tight tracking-tight text-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {item.description}
+                  </p>
+                </motion.div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="border-b border-border/60 bg-background">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <SectionTitle eyebrow="Nos valeurs" title="Ce qui nous guide au quotidien" />
+          <SectionTitle eyebrow="Mes valeurs" title="Les principes qui guident ma pratique" />
           <ValuesTimeline values={values} />
         </div>
       </section>
 
       <section className="border-b border-border/60 bg-[oklch(0.975_0.012_285)] dark:bg-[oklch(0.16_0.02_285)]">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <SectionTitle eyebrow="En images" title="Notre quotidien" />
+          <SectionTitle eyebrow="En images" title="Un cadre propice au mieux-être" />
           <div className="mt-14 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
             {gallery.map((src: string, i: number) => (
               <motion.div
@@ -336,6 +389,39 @@ export function AboutContent() {
                 />
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bandeau de réassurance */}
+      <section className="border-b border-border/60 bg-background">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {defaults.credentials.map((item, i) => {
+              const Icon = getIcon(item.iconName)
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease }}
+                  className="flex items-start gap-4 rounded-2xl border border-border/60 bg-card/70 p-5 backdrop-blur-sm"
+                >
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-primary/20">
+                    <Icon className="size-5" aria-hidden />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-sm font-semibold leading-tight tracking-tight text-foreground">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>

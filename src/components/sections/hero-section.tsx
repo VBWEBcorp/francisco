@@ -1,7 +1,7 @@
 'use client'
 
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowRight, Star } from 'lucide-react'
+import { ArrowRight, Check } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -133,29 +133,19 @@ export function HeroSection() {
             </Button>
           </div>
 
-          {/* Social proof : rating + avatars */}
-          <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-5">
-            <div className="flex -space-x-2">
-              {[0, 1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="size-7 rounded-full ring-2 ring-black/30"
-                  style={{
-                    background: `linear-gradient(135deg, oklch(${0.55 + i * 0.05} 0.18 ${260 + i * 15} / 0.85), oklch(${0.65 + i * 0.04} 0.15 ${285 + i * 10} / 0.65))`,
-                  }}
-                  aria-hidden
-                />
-              ))}
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <div className="flex items-center gap-0.5 text-amber-300">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <Star key={i} className="size-3.5 fill-current" aria-hidden />
-                ))}
+          {/* Badges de confiance */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-white/80">
+            {(hero.badges ?? defaults.badges).map((badge: string, i: number, arr: string[]) => (
+              <div key={badge} className="flex items-center gap-x-6">
+                <span className="flex items-center gap-2">
+                  <Check className="size-4 text-[oklch(0.78_0.15_285)]" aria-hidden />
+                  {badge}
+                </span>
+                {i < arr.length - 1 && (
+                  <span className="hidden h-1 w-1 rounded-full bg-white/40 sm:inline" aria-hidden />
+                )}
               </div>
-              <span className="font-medium text-white">4.9/5</span>
-              <span className="text-white/70">· 200+ clients satisfaits</span>
-            </div>
+            ))}
           </div>
         </motion.div>
 

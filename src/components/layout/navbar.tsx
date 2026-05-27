@@ -17,48 +17,18 @@ interface NavLink {
 
 const defaultLinks: NavLink[] = [
   { to: '/', label: 'Accueil' },
-  { to: '/a-propos', label: 'À propos' },
   { to: '/services', label: 'Services' },
-  { to: '/gallery', label: 'Galerie' },
-  { to: '/blog', label: 'Blog' },
+  { to: '/mon-approche', label: 'Mon Approche' },
+  { to: '/a-propos', label: 'Qui suis-je ?' },
   { to: '/contact', label: 'Contact' },
 ]
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
-  const [links, setLinks] = useState<NavLink[]>(defaultLinks)
+  const [links] = useState<NavLink[]>(defaultLinks)
   const [scrolled, setScrolled] = useState(false)
   const [hoveredKey, setHoveredKey] = useState<string | null>(null)
   const pathname = usePathname()
-
-  useEffect(() => {
-    const checkFeatures = async () => {
-      try {
-        const [galleryRes, blogRes] = await Promise.all([
-          fetch('/api/gallery/settings'),
-          fetch('/api/blog/settings'),
-        ])
-        const gallery = await galleryRes.json()
-        const blog = await blogRes.json()
-
-        const dynamicLinks: NavLink[] = [
-          { to: '/', label: 'Accueil' },
-          { to: '/a-propos', label: 'À propos' },
-          { to: '/services', label: 'Services' },
-        ]
-
-        if (gallery?.enabled !== false) dynamicLinks.push({ to: '/gallery', label: 'Galerie' })
-        if (blog?.enabled !== false) dynamicLinks.push({ to: '/blog', label: 'Blog' })
-
-        dynamicLinks.push({ to: '/contact', label: 'Contact' })
-        setLinks(dynamicLinks)
-      } catch {
-        // Liens par défaut conservés en cas d'erreur
-      }
-    }
-
-    checkFeatures()
-  }, [])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -187,7 +157,7 @@ export function Navbar() {
                   className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"
                   aria-hidden
                 />
-                <span className="relative">Nous contacter</span>
+                <span className="relative">Prendre rendez-vous</span>
                 <ArrowRight
                   className="relative size-3.5 transition-transform duration-300 group-hover/cta:translate-x-0.5"
                   aria-hidden
@@ -317,7 +287,7 @@ export function Navbar() {
                       className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"
                       aria-hidden
                     />
-                    <span className="relative">Nous contacter</span>
+                    <span className="relative">Prendre rendez-vous</span>
                     <ArrowRight className="relative size-4" aria-hidden />
                   </Link>
                 </motion.div>

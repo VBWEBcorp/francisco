@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Clock, Mail, MapPin, Phone, Send } from 'lucide-react'
+import { Clock, Mail, MapPin, Phone, Send, ShieldCheck } from 'lucide-react'
 
 import { PremiumHero } from '@/components/sections/premium-hero'
 import { Button } from '@/components/ui/button'
@@ -49,17 +49,17 @@ export function ContactContent() {
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-white/80">
           <div className="flex items-center gap-2">
             <Clock className="size-4 text-[oklch(0.78_0.15_285)]" aria-hidden />
-            <span>Réponse sous 24h</span>
+            <span>Réponse rapide</span>
           </div>
           <span className="hidden h-1 w-1 rounded-full bg-white/40 sm:inline" aria-hidden />
           <div className="flex items-center gap-2">
-            <Send className="size-4 text-[oklch(0.78_0.15_285)]" aria-hidden />
-            <span>Devis gratuit</span>
+            <ShieldCheck className="size-4 text-[oklch(0.78_0.15_285)]" aria-hidden />
+            <span>Échange confidentiel</span>
           </div>
           <span className="hidden h-1 w-1 rounded-full bg-white/40 sm:inline" aria-hidden />
           <div className="flex items-center gap-2">
             <span className="flex size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_oklch(0.7_0.15_150/0.8)]" aria-hidden />
-            <span>Disponible cette semaine</span>
+            <span>Cabinet & téléconsultation</span>
           </div>
         </div>
       </PremiumHero>
@@ -95,9 +95,9 @@ export function ContactContent() {
                     </span>
                     <div>
                       <h2 className="font-display text-lg font-semibold tracking-tight text-foreground">
-                        Envoyer un message
+                        Contactez Francisco Pautrot
                       </h2>
-                      <p className="text-xs text-muted-foreground">Tous les champs sont obligatoires sauf indication</p>
+                      <p className="text-xs text-muted-foreground">Décrivez brièvement votre demande, je vous réponds rapidement</p>
                     </div>
                   </div>
 
@@ -105,64 +105,61 @@ export function ContactContent() {
                     className="mt-7 space-y-5"
                     onSubmit={(e) => e.preventDefault()}
                   >
+                    <div className="space-y-2">
+                      <Label htmlFor="fullname">Nom complet</Label>
+                      <Input
+                        id="fullname"
+                        name="fullname"
+                        placeholder="Votre nom"
+                        autoComplete="name"
+                        className="h-11 rounded-xl bg-background/70 transition-shadow focus-visible:shadow-[0_0_0_4px_oklch(0.55_0.2_285/0.1)]"
+                      />
+                    </div>
                     <div className="grid gap-5 sm:grid-cols-2">
                       <div className="space-y-2">
-                        <Label htmlFor="firstname">Prénom</Label>
+                        <Label htmlFor="email">Email</Label>
                         <Input
-                          id="firstname"
-                          name="firstname"
-                          placeholder="Jean"
-                          autoComplete="given-name"
+                          id="email"
+                          name="email"
+                          type="email"
+                          placeholder="votre@email.com"
+                          autoComplete="email"
                           className="h-11 rounded-xl bg-background/70 transition-shadow focus-visible:shadow-[0_0_0_4px_oklch(0.55_0.2_285/0.1)]"
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="lastname">Nom</Label>
+                        <Label htmlFor="phone">Téléphone</Label>
                         <Input
-                          id="lastname"
-                          name="lastname"
-                          placeholder="Dupont"
-                          autoComplete="family-name"
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          placeholder="Votre numéro"
+                          autoComplete="tel"
                           className="h-11 rounded-xl bg-background/70 transition-shadow focus-visible:shadow-[0_0_0_4px_oklch(0.55_0.2_285/0.1)]"
                         />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
+                      <Label htmlFor="subject">Sujet</Label>
                       <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="jean@entreprise.fr"
-                        autoComplete="email"
+                        id="subject"
+                        name="subject"
+                        placeholder="Sujet de votre message"
                         className="h-11 rounded-xl bg-background/70 transition-shadow focus-visible:shadow-[0_0_0_4px_oklch(0.55_0.2_285/0.1)]"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="phone">
-                        Téléphone <span className="font-normal text-muted-foreground">(optionnel)</span>
-                      </Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        placeholder="06 12 34 56 78"
-                        autoComplete="tel"
-                        className="h-11 rounded-xl bg-background/70 transition-shadow focus-visible:shadow-[0_0_0_4px_oklch(0.55_0.2_285/0.1)]"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="message">Votre message</Label>
+                      <Label htmlFor="message">Votre demande</Label>
                       <textarea
                         id="message"
                         name="message"
                         rows={5}
-                        placeholder="Décrivez votre projet en quelques mots..."
+                        placeholder="Décrivez brièvement votre demande ou vos attentes..."
                         className="w-full rounded-xl border border-input bg-background/70 px-3.5 py-3 text-sm leading-relaxed text-foreground transition-shadow placeholder:text-muted-foreground focus-visible:border-ring focus-visible:shadow-[0_0_0_4px_oklch(0.55_0.2_285/0.1)] focus-visible:outline-none"
                       />
                     </div>
                     <Button type="submit" size="lg" className="w-full group">
-                      Envoyer le message
+                      Envoyer ma demande
                       <Send className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden />
                     </Button>
                   </form>
@@ -195,7 +192,7 @@ export function ContactContent() {
 
                 <div className="relative space-y-5">
                   <h2 className="font-display text-base font-semibold tracking-tight text-foreground">
-                    Nous joindre directement
+                    Me joindre directement
                   </h2>
 
                   <a
@@ -238,6 +235,16 @@ export function ContactContent() {
                     </div>
                   </div>
 
+                  <div className="flex items-start gap-4 -mx-3 rounded-xl px-3 py-2">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-primary/20">
+                      <Clock className="size-4" aria-hidden />
+                    </span>
+                    <div>
+                      <p className="text-xs font-medium text-muted-foreground">Horaires</p>
+                      <p className="text-sm font-semibold text-foreground">Sur rendez-vous</p>
+                    </div>
+                  </div>
+
                   <div className="border-t border-border/60 pt-5">
                     <div className="flex items-center gap-2">
                       <span
@@ -248,49 +255,24 @@ export function ContactContent() {
                         <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
                       </span>
                       <span className="text-xs font-medium text-foreground">
-                        Disponible aujourd'hui
+                        Nouveaux patients bienvenus
                       </span>
-                      <span className="text-xs text-muted-foreground">· Lun-Ven 9h-18h</span>
+                      <span className="text-xs text-muted-foreground">· Cabinet & visio</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Map placeholder amélioré */}
-              <div className="relative overflow-hidden rounded-3xl bg-muted/50 shadow-[0_10px_30px_-12px_oklch(0.2_0.02_264/0.18)] backdrop-blur-sm">
-                <div
-                  className="pointer-events-none absolute inset-0 rounded-3xl p-px"
-                  aria-hidden
-                  style={{
-                    background:
-                      'linear-gradient(135deg, oklch(0.55 0.2 285 / 0.3) 0%, oklch(0.91 0.012 264 / 0.5) 50%, oklch(0.55 0.2 285 / 0.3) 100%)',
-                    WebkitMask:
-                      'linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)',
-                    WebkitMaskComposite: 'xor',
-                    maskComposite: 'exclude',
-                  }}
+              {/* Carte Google Maps — Le Mans */}
+              <div className="relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-12px_oklch(0.2_0.02_264/0.18)]">
+                <iframe
+                  title="Le Mans — zone d'intervention de Francisco Pautrot, psychopraticien"
+                  src="https://www.google.com/maps?q=Le+Mans,+Sarthe,+France&hl=fr&z=12&output=embed"
+                  className="h-56 w-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
                 />
-                {/* Dot grid décoratif */}
-                <div
-                  className="pointer-events-none absolute inset-0 opacity-40"
-                  aria-hidden
-                  style={{
-                    backgroundImage:
-                      'radial-gradient(oklch(0.55 0.05 264 / 0.2) 1px, transparent 1px)',
-                    backgroundSize: '24px 24px',
-                  }}
-                />
-                <div className="relative flex h-56 flex-col items-center justify-center gap-3 p-6 text-center">
-                  <span className="flex size-12 items-center justify-center rounded-2xl bg-background/70 text-primary ring-1 ring-border/60 backdrop-blur-sm">
-                    <MapPin className="size-5" aria-hidden />
-                  </span>
-                  <p className="text-sm font-medium text-foreground">
-                    Intégrez ici votre carte Google Maps
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    iframe ou API Google Maps
-                  </p>
-                </div>
               </div>
             </motion.div>
           </div>

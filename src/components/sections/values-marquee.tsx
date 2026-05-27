@@ -1,24 +1,24 @@
 import {
-  Eye,
-  Handshake,
+  Ear,
+  Heart,
   HeartHandshake,
-  Lightbulb,
-  Rocket,
-  Shield,
+  Leaf,
+  Lock,
+  Smile,
   Sparkles,
-  Target,
+  UserCheck,
   type LucideIcon,
 } from 'lucide-react'
 
 const values: { icon: LucideIcon; label: string }[] = [
-  { icon: Sparkles, label: 'Excellence' },
-  { icon: Handshake, label: 'Confiance' },
-  { icon: Lightbulb, label: 'Innovation' },
-  { icon: Eye, label: 'Transparence' },
-  { icon: Rocket, label: 'Performance' },
-  { icon: HeartHandshake, label: 'Proximité' },
-  { icon: Shield, label: 'Fiabilité' },
-  { icon: Target, label: 'Sur mesure' },
+  { icon: Heart, label: 'Bienveillance' },
+  { icon: Ear, label: 'Écoute' },
+  { icon: HeartHandshake, label: 'Confiance' },
+  { icon: Lock, label: 'Confidentialité' },
+  { icon: Smile, label: 'Empathie' },
+  { icon: UserCheck, label: 'Respect' },
+  { icon: Leaf, label: 'Sérénité' },
+  { icon: Sparkles, label: 'Accompagnement' },
 ]
 
 function ValuesTrack({

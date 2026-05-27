@@ -5,8 +5,9 @@ import { siteConfig } from '@/lib/seo'
 
 const navLinks = [
   { label: 'Accueil', to: '/' },
-  { label: 'À propos', to: '/a-propos' },
   { label: 'Services', to: '/services' },
+  { label: 'Mon Approche', to: '/mon-approche' },
+  { label: 'Qui suis-je ?', to: '/a-propos' },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -139,10 +140,10 @@ export function Footer() {
           <p className="text-sm font-bold uppercase tracking-wide">
             Maquette de démonstration — Propriété exclusive de{' '}
             <a
-              href={siteConfig.url}
+              href="https://ouibo.fr"
               className="underline underline-offset-2 transition-opacity hover:opacity-80"
             >
-              {siteConfig.url.replace(/^https?:\/\/(www\.)?/, '').toUpperCase()}
+              OUIBO.FR
             </a>
           </p>
           <p className="mt-1 text-xs leading-relaxed text-white/90">
